@@ -1,470 +1,190 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Love Story ♡</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <title>Our Love Story ♡</title>
 
-body {
-  font-family: Georgia, serif;
-  background: #f9eef2;
-  color: #5b4149;
-  text-align: center;
-  overflow-x: hidden;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-section {
-  min-height: 100vh;
-  padding: 70px 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #684754;
 
-.hero {
-  background: linear-gradient(
-    135deg,
-    #f9e7ed,
-    #f5d9e3,
-    #ead8e5
-  );
-}
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.45), transparent 20%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,.4), transparent 20%),
+        linear-gradient(145deg, #fbe9ee, #f3dce4);
+    }
 
-h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
-  color: #754e5b;
-}
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      position: relative;
+    }
 
-h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
-  color: #754e5b;
-}
+    .heart {
+      font-size: 85px;
+      font-family: Arial, sans-serif;
+      font-weight: 200;
+      margin-bottom: 35px;
+      animation: heartbeat 2s ease-in-out infinite;
+    }
 
-p {
-  font-size: 17px;
-  line-height: 1.8;
-  max-width: 600px;
-}
+    .small {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: .75;
+    }
 
-.subtitle {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
+    h1 {
+      font-size: clamp(42px, 11vw, 70px);
+      font-weight: normal;
+      line-height: 1.1;
+      margin-bottom: 25px;
+    }
 
-button {
-  border: none;
-  background: #9b6878;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(100,60,75,.2);
-}
+    .description {
+      max-width: 500px;
+      font-size: 21px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
 
-.heart {
-  font-size: 60px;
-  animation: heartbeat 1.5s infinite;
-  margin-bottom: 20px;
-}
+    .open-button {
+      display: inline-block;
+      padding: 17px 38px;
+      border-radius: 50px;
+      background: #a66d7e;
+      color: white;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 17px;
+      box-shadow: 0 10px 25px rgba(100,60,70,.18);
+      transition: .3s;
+    }
 
-@keyframes heartbeat {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
+    .open-button:hover {
+      transform: translateY(-4px) scale(1.03);
+      background: #955f70;
+    }
 
-/* floating hearts */
-.floating-heart {
-  position: fixed;
-  bottom: -30px;
-  font-size: 22px;
-  animation: floatUp 7s linear infinite;
-  opacity: .7;
-  pointer-events: none;
-}
+    .floating {
+      position: absolute;
+      font-family: Arial, sans-serif;
+      opacity: .45;
+      animation: float 5s ease-in-out infinite;
+    }
 
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 0;
-  }
-  20% { opacity: .7; }
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
+    .one {
+      top: 12%;
+      left: 12%;
+      font-size: 35px;
+    }
 
-/* photo */
-.photo-box {
-  width: 280px;
-  height: 350px;
-  background: white;
-  padding: 12px 12px 45px;
-  box-shadow: 0 10px 30px rgba(80,50,60,.15);
-  transform: rotate(-2deg);
-  margin: 20px;
-}
+    .two {
+      top: 27%;
+      right: 17%;
+      font-size: 25px;
+      animation-delay: 1s;
+    }
 
-.photo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .three {
+      bottom: 13%;
+      right: 10%;
+      font-size: 38px;
+      animation-delay: 2s;
+    }
 
-/* story */
-.story {
-  background: #fff8fa;
-}
+    .four {
+      bottom: 23%;
+      left: 15%;
+      font-size: 22px;
+      animation-delay: 3s;
+    }
 
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  max-width: 600px;
-  margin: 15px 0;
-  box-shadow: 0 8px 25px rgba(100,60,75,.08);
-}
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
 
-/* countdown */
-.countdown {
-  display: flex;
-  gap: 12px;
-  margin: 25px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+      50% {
+        transform: scale(1.1);
+      }
+    }
 
-.time-box {
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  min-width: 70px;
-  box-shadow: 0 5px 15px rgba(100,60,75,.1);
-}
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
 
-.time-box strong {
-  display: block;
-  font-size: 25px;
-  color: #9b6878;
-}
+      50% {
+        transform: translateY(-15px);
+      }
+    }
 
-.time-box span {
-  font-size: 12px;
-}
+    @media (max-width: 500px) {
+      .heart {
+        font-size: 75px;
+        margin-bottom: 25px;
+      }
 
-/* letter */
-.letter {
-  background: #f3e4ea;
-}
+      .description {
+        font-size: 19px;
+      }
 
-.letter-paper {
-  background: #fffdf8;
-  max-width: 600px;
-  padding: 35px 25px;
-  border-radius: 5px;
-  box-shadow: 0 10px 30px rgba(80,50,60,.15);
-  text-align: left;
-  line-height: 1.9;
-}
-
-footer {
-  padding: 30px;
-  background: #754e5b;
-  color: white;
-}
-
-.small {
-  font-size: 14px;
-}
-</style>
+      .open-button {
+        padding: 16px 32px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- FLOATING HEARTS -->
-<div class="floating-heart" style="left:10%; animation-delay:0s;">♡</div>
-<div class="floating-heart" style="left:30%; animation-delay:2s;">♥</div>
-<div class="floating-heart" style="left:50%; animation-delay:4s;">♡</div>
-<div class="floating-heart" style="left:75%; animation-delay:1s;">♥</div>
-<div class="floating-heart" style="left:90%; animation-delay:3s;">♡</div>
+  <main class="page">
 
+    <div class="floating one">♡</div>
+    <div class="floating two">♡</div>
+    <div class="floating three">♡</div>
+    <div class="floating four">♡</div>
 
-<!-- OPENING -->
-<section class="hero">
+    <div class="heart">♡</div>
 
-  <div class="heart">♡</div>
-
-  <h1>Our Love Story</h1>
-
-  <p class="subtitle">
-    A little website about<br>
-    you, me, and our beautiful memories.
-  </p>
-
-  <button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
-    Open Our Story ♡
-  </button>
-
-</section>
-
-
-<!-- INTRO -->
-<section id="story">
-
-  <h2>Happy Anniversary ♡</h2>
-
-  <p>
-    Untuk seseorang yang selalu punya tempat
-    spesial di hatiku...
-  </p>
-
-  <div class="card">
-    <p>
-      Terima kasih sudah hadir dalam hidupku.
-      Terima kasih untuk semua tawa, cerita,
-      perhatian, dan hal-hal kecil yang mungkin
-      terlihat sederhana tetapi selalu berarti.
-    </p>
-  </div>
-
-</section>
-
-
-<!-- PHOTO -->
-<section class="story">
-
-  <h2>Our Memories 📸</h2>
-
-  <div class="photo-box">
-
-    <!-- GANTI FOTO DI SINI -->
-    <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80">
-
-  </div>
-
-  <p>
-    Satu foto mungkin hanya sebuah gambar,
-    tapi setiap foto menyimpan cerita.
-  </p>
-
-</section>
-
-
-<!-- STORY -->
-<section>
-
-  <h2>Our Story ♡</h2>
-
-  <div class="card">
-    <h3>First Chapter</h3>
-    <br>
-    <p>
-      Di sinilah semuanya dimulai...
-      Dari sebuah pertemuan sederhana,
-      kemudian menjadi sesuatu yang sangat berarti.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Growing Together</h3>
-    <br>
-    <p>
-      Kita belajar memahami satu sama lain,
-      melewati hari-hari baik maupun sulit,
-      dan tetap memilih untuk bersama.
-    </p>
-  </div>
-
-  <div class="card">
-    <h3>Today</h3>
-    <br>
-    <p>
-      Dan sekarang kita masih di sini.
-      Masih bersama, masih membuat cerita,
-      dan masih punya banyak halaman untuk ditulis.
-    </p>
-  </div>
-
-</section>
-
-
-<!-- COUNTDOWN -->
-<section class="story">
-
-  <h2>Our Special Day ♡</h2>
-
-  <p>
-    Menuju anniversary kita...
-  </p>
-
-  <div class="countdown">
-
-    <div class="time-box">
-      <strong id="days">0</strong>
-      <span>Hari</span>
+    <div class="small">
+      A little story about us
     </div>
 
-    <div class="time-box">
-      <strong id="hours">0</strong>
-      <span>Jam</span>
-    </div>
+    <h1>
+      Our Love Story
+    </h1>
 
-    <div class="time-box">
-      <strong id="minutes">0</strong>
-      <span>Menit</span>
-    </div>
-
-    <div class="time-box">
-      <strong id="seconds">0</strong>
-      <span>Detik</span>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- LOVE LETTER -->
-<section class="letter">
-
-  <h2>A Letter For You 💌</h2>
-
-  <div class="letter-paper">
-
-    <p>
-      Dear You,
+    <p class="description">
+      A little website about you, me,
+      and our beautiful memories.
     </p>
 
-    <br>
+    <!-- TOMBOL MENUJU HALAMAN 2 -->
+    <a href="story.html" class="open-button">
+      Open Our Story ♡
+    </a>
 
-    <p>
-      Kalau suatu hari nanti kamu membaca ini,
-      aku ingin kamu tahu bahwa aku sangat
-      bersyukur pernah menemukanmu.
-    </p>
-
-    <br>
-
-    <p>
-      Terima kasih sudah menjadi bagian dari
-      hidupku. Terima kasih sudah bertahan,
-      menemani, dan membuat hari-hariku menjadi
-      lebih indah.
-    </p>
-
-    <br>
-
-    <p>
-      Aku tidak tahu apa yang akan terjadi
-      di masa depan, tetapi aku berharap
-      kita masih bisa terus membuat banyak
-      cerita bersama.
-    </p>
-
-    <br>
-
-    <p>
-      Happy Anniversary, sayang. ♡
-    </p>
-
-    <br>
-
-    <p style="text-align:right;">
-      With love,<br>
-      Me ♡
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- CLOSING -->
-<section class="hero">
-
-  <div class="heart">♥</div>
-
-  <h2>Forever & Always</h2>
-
-  <p>
-    Semoga cerita kita masih panjang.
-  </p>
-
-  <br>
-
-  <p class="small">
-    Made with love ♡
-  </p>
-
-</section>
-
-
-<footer>
-  <p>♡ Our Story ♡</p>
-</footer>
-
-
-<script>
-
-/* COUNTDOWN
-   GANTI TANGGAL DI BAWAH
-   Format: Tahun-Bulan-Tanggal
-*/
-
-const anniversary = new Date("2026-09-14 00:00:00").getTime();
-
-function updateCountdown() {
-
-  const now = new Date().getTime();
-  const distance = anniversary - now;
-
-  if (distance <= 0) {
-
-    document.getElementById("days").innerText = "♡";
-    document.getElementById("hours").innerText = "♡";
-    document.getElementById("minutes").innerText = "♡";
-    document.getElementById("seconds").innerText = "♡";
-
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) /
-    (1000 * 60 * 60)
-  );
-
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) /
-    (1000 * 60)
-  );
-
-  const seconds = Math.floor(
-    (distance % (1000 * 60)) /
-    1000
-  );
-
-  document.getElementById("days").innerText = days;
-  document.getElementById("hours").innerText = hours;
-  document.getElementById("minutes").innerText = minutes;
-  document.getElementById("seconds").innerText = seconds;
-}
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-</script>
+  </main>
 
 </body>
-    </html>
+</html>
