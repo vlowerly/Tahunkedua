@@ -1,150 +1,923 @@
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Our Love Story ♡</title>
+  <title>Untuk Kamu ♥</title>
 
-  <!-- FONT -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Pinyon+Script&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Quicksand:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+
     body {
       min-height: 100vh;
       overflow: hidden;
 
       font-family: "Quicksand", sans-serif;
+
       color: #684754;
 
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.45), transparent 20%),
-        radial-gradient(circle at 80% 80%, rgba(255,255,255,.4), transparent 20%),
-        linear-gradient(145deg, #fbe9ee, #f3dce4);
+        radial-gradient(
+          circle at center,
+          #fffafb 0%,
+          #fae9ee 48%,
+          #efd5dd 100%
+        );
     }
+
+
+    /* =========================
+       COVER
+       ========================= */
 
     .page {
+
       min-height: 100vh;
+
       display: flex;
       flex-direction: column;
+
       justify-content: center;
       align-items: center;
+
       text-align: center;
-      padding: 30px;
+
+      padding: 25px;
+
       position: relative;
+
+      transform:
+        translateY(-3vh);
     }
 
-    .heart {
-      font-size: 85px;
-      margin-bottom: 25px;
-      animation: heartbeat 2s ease-in-out infinite;
+
+    /* =========================
+       BOUQUET
+       ========================= */
+
+    .bouquet {
+
+      width: 155px;
+      height: 150px;
+
+      margin-bottom: 8px;
+
+      animation:
+        gentleFloat 5s ease-in-out infinite;
+
+      filter:
+        drop-shadow(
+          0 8px 12px
+          rgba(110, 70, 80, 0.08)
+        );
     }
 
-    .small {
-      font-family: "Quicksand", sans-serif;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-      opacity: .75;
+
+    .bouquet svg {
+
+      width: 100%;
+      height: 100%;
+
+      overflow: visible;
     }
+
+
+    /* =========================
+       BATANG
+       ========================= */
+
+    .stem {
+
+      fill: none;
+
+      stroke: #8f7179;
+
+      stroke-width: 1.5;
+
+      stroke-linecap: round;
+    }
+
+
+    /* =========================
+       DAUN
+       ========================= */
+
+    .leaf {
+
+      fill: none;
+
+      stroke: #8f7179;
+
+      stroke-width: 1.5;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
+
+    /* =========================
+       BUNGA
+       ========================= */
+
+    .flower-line {
+
+      fill: none;
+
+      stroke: #ad7888;
+
+      stroke-width: 1.5;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
+
+    .flower-center {
+
+      fill: #ad7888;
+    }
+
+
+    /* =========================
+       PITA
+       ========================= */
+
+    .ribbon-line {
+
+      fill: none;
+
+      stroke: #ad7888;
+
+      stroke-width: 1.6;
+
+      stroke-linecap: round;
+
+      stroke-linejoin: round;
+    }
+
+
+    .ribbon-fill {
+
+      fill:
+        rgba(255, 242, 246, 0.55);
+
+      stroke: #ad7888;
+
+      stroke-width: 1.5;
+    }
+
+
+    /* =========================
+       JUDUL
+       ========================= */
 
     h1 {
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(50px, 13vw, 82px);
-      font-weight: 500;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(50px, 13vw, 74px);
+
+      /* LEBIH TEBAL */
+      font-weight: 700;
+
       line-height: 1;
-      margin-bottom: 25px;
+
+      color: #684754;
+
+      margin-bottom: 18px;
+
+      letter-spacing: 0;
     }
+
+
+    /* =========================
+       LOVE PENUH
+       ========================= */
+
+    .title-heart {
+
+      display: inline-block;
+
+      font-family:
+        Arial,
+        sans-serif;
+
+      font-size: 0.58em;
+
+      font-weight: 700;
+
+      color: #a85f76;
+
+      margin-left: 5px;
+
+      vertical-align: 0.08em;
+
+      transform:
+        scale(1.05);
+    }
+
+
+    /* =========================
+       WORDING
+       ========================= */
 
     .description {
-      max-width: 500px;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
 
-    .open-button {
-      display: inline-block;
-      padding: 17px 38px;
-      border-radius: 50px;
-      background: #a66d7e;
-      color: white;
-      text-decoration: none;
+      max-width: 330px;
 
-      font-family: "Quicksand", sans-serif;
-      font-weight: 500;
+      font-family:
+        "Quicksand",
+        sans-serif;
+
       font-size: 16px;
 
-      box-shadow: 0 10px 25px rgba(100,60,70,.18);
-      transition: .3s;
+      font-weight: 400;
+
+      line-height: 1.7;
+
+      letter-spacing: 0.1px;
+
+      color: #795b65;
+
+      margin-bottom: 30px;
     }
+
+
+    /* =========================
+       BUTTON
+       ========================= */
+
+    .open-button {
+
+      display: inline-block;
+
+      padding: 14px 28px;
+
+      border-radius: 50px;
+
+      background: #a66d7e;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      letter-spacing: 0.1px;
+
+      box-shadow:
+        0 10px 25px
+        rgba(100, 60, 70, 0.18);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
 
     .open-button:hover {
-      transform: translateY(-4px) scale(1.03);
-      background: #955f70;
+
+      transform:
+        translateY(-4px);
+
+      box-shadow:
+        0 14px 30px
+        rgba(100, 60, 70, 0.24);
     }
+
+
+    /* =========================
+       HATI BACKGROUND
+       ========================= */
 
     .floating {
+
       position: absolute;
-      opacity: .45;
-      animation: float 5s ease-in-out infinite;
+
+      color: #b78391;
+
+      opacity: 0.38;
+
+      font-size: 25px;
+
+      animation:
+        floatHeart 5s ease-in-out infinite;
     }
+
 
     .one {
-      top: 12%;
+
+      top: 13%;
       left: 12%;
-      font-size: 35px;
     }
 
+
     .two {
-      top: 27%;
-      right: 17%;
-      font-size: 25px;
+
+      top: 23%;
+      right: 13%;
+
       animation-delay: 1s;
     }
 
+
     .three {
-      bottom: 13%;
+
+      bottom: 14%;
       right: 10%;
-      font-size: 38px;
+
+      font-size: 34px;
+
       animation-delay: 2s;
     }
 
+
     .four {
-      bottom: 23%;
-      left: 15%;
-      font-size: 22px;
+
+      bottom: 20%;
+      left: 12%;
+
       animation-delay: 3s;
     }
 
-    @keyframes heartbeat {
+
+    /* =========================
+       ANIMASI
+       ========================= */
+
+    @keyframes gentleFloat {
+
       0%, 100% {
-        transform: scale(1);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: scale(1.1);
+        transform:
+          translateY(-6px);
       }
+
     }
 
-    @keyframes float {
+
+    @keyframes floatHeart {
+
       0%, 100% {
-        transform: translateY(0);
+        transform:
+          translateY(0);
       }
 
       50% {
-        transform: translateY(-15px);
+        transform:
+          translateY(-12px);
       }
+
     }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media (max-width: 500px) {
+
+      .page {
+
+        padding: 20px;
+
+        transform:
+          translateY(-3vh);
+      }
+
+
+      .bouquet {
+
+        width: 140px;
+        height: 140px;
+
+        margin-bottom: 5px;
+      }
+
+
+      h1 {
+
+        font-size: 54px;
+
+        font-weight: 700;
+
+        margin-bottom: 17px;
+      }
+
+
+      .title-heart {
+
+        font-size: 0.60em;
+
+        margin-left: 4px;
+      }
+
+
+      .description {
+
+        max-width: 310px;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+
+        margin-bottom: 28px;
+      }
+
+
+      .open-button {
+
+        padding: 13px 25px;
+
+        font-size: 13px;
+      }
+
+
+      .floating {
+
+        font-size: 22px;
+      }
+
+
+      .three {
+
+        font-size: 30px;
+      }
+
+    }
+
   </style>
+
 </head>
+
+
+<body>
+
+
+  <main class="page">
+
+
+    <!-- HATI BACKGROUND -->
+
+    <div class="floating one">
+      ♡
+    </div>
+
+    <div class="floating two">
+      ♡
+    </div>
+
+    <div class="floating three">
+      ♡
+    </div>
+
+    <div class="floating four">
+      ♡
+    </div>
+
+
+    <!-- =========================
+         BOUQUET
+         ========================= -->
+
+    <div class="bouquet">
+
+      <svg
+        viewBox="0 0 180 175"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <!-- BATANG -->
+
+        <path
+          class="stem"
+          d="M90 142 C86 115 87 78 91 42"
+        />
+
+        <path
+          class="stem"
+          d="M91 126 C72 103 57 75 50 48"
+        />
+
+        <path
+          class="stem"
+          d="M91 126 C109 103 123 76 130 50"
+        />
+
+        <path
+          class="stem"
+          d="M88 126 C72 112 42 103 31 78"
+        />
+
+        <path
+          class="stem"
+          d="M94 126 C110 111 140 101 150 77"
+        />
+
+
+        <!-- DAUN KIRI -->
+
+        <path
+          class="leaf"
+          d="
+            M65 105
+            C50 102 43 93 42 84
+            C53 84 63 91 65 105Z
+          "
+        />
+
+        <path
+          class="leaf"
+          d="
+            M74 119
+            C58 118 49 112 46 103
+            C57 102 68 108 74 119Z
+          "
+        />
+
+
+        <!-- DAUN KANAN -->
+
+        <path
+          class="leaf"
+          d="
+            M113 105
+            C128 101 137 93 138 84
+            C126 85 116 92 113 105Z
+          "
+        />
+
+        <path
+          class="leaf"
+          d="
+            M106 119
+            C122 117 132 111 135 102
+            C123 102 112 108 106 119Z
+          "
+        />
+
+
+        <!-- BUNGA KIRI -->
+
+        <g transform="translate(49 45)">
+
+          <circle
+            class="flower-center"
+            cx="0"
+            cy="0"
+            r="3"
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-12 -5 -14 -16 -7 -19
+              C-1 -22 3 -13 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C5 -12 15 -14 18 -7
+              C20 -1 11 3 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C12 5 14 15 7 18
+              C1 20 -3 11 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-5 12 -15 14 -18 7
+              C-20 1 -11 -3 0 0
+            "
+          />
+
+        </g>
+
+
+        <!-- BUNGA TENGAH -->
+
+        <g transform="translate(91 39)">
+
+          <circle
+            class="flower-center"
+            cx="0"
+            cy="0"
+            r="3"
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-13 -6 -15 -17 -7 -20
+              C0 -22 4 -12 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C6 -13 17 -15 20 -7
+              C22 0 12 4 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C13 6 15 17 7 20
+              C0 22 -4 12 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-6 13 -17 15 -20 7
+              C-22 0 -12 -4 0 0
+            "
+          />
+
+        </g>
+
+
+        <!-- BUNGA KANAN -->
+
+        <g transform="translate(130 48)">
+
+          <circle
+            class="flower-center"
+            cx="0"
+            cy="0"
+            r="3"
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-11 -5 -13 -15 -7 -18
+              C-1 -20 3 -11 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C5 -11 14 -13 17 -7
+              C19 -1 10 3 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C11 5 13 15 7 18
+              C1 20 -3 11 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-5 11 -14 13 -17 7
+              C-19 1 -10 -3 0 0
+            "
+          />
+
+        </g>
+
+
+        <!-- BUNGA KECIL KIRI -->
+
+        <g transform="translate(31 76)">
+
+          <circle
+            class="flower-center"
+            cx="0"
+            cy="0"
+            r="2.5"
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-8 -4 -9 -10 -4 -12
+              C0 -13 3 -7 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C4 -8 10 -9 12 -4
+              C13 0 7 3 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C8 4 9 10 4 12
+              C0 13 -3 7 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-4 8 -10 9 -12 4
+              C-13 0 -7 -3 0 0
+            "
+          />
+
+        </g>
+
+
+        <!-- BUNGA KECIL KANAN -->
+
+        <g transform="translate(150 76)">
+
+          <circle
+            class="flower-center"
+            cx="0"
+            cy="0"
+            r="2.5"
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-8 -4 -9 -10 -4 -12
+              C0 -13 3 -7 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C4 -8 10 -9 12 -4
+              C13 0 7 3 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C8 4 9 10 4 12
+              C0 13 -3 7 0 0
+            "
+          />
+
+          <path
+            class="flower-line"
+            d="
+              M0 0
+              C-4 8 -10 9 -12 4
+              C-13 0 -7 -3 0 0
+            "
+          />
+
+        </g>
+
+
+        <!-- PITA -->
+
+        <path
+          class="ribbon-fill"
+          d="
+            M91 125
+            C75 116 65 123 68 135
+            C71 145 82 145 91 132Z
+          "
+        />
+
+        <path
+          class="ribbon-fill"
+          d="
+            M91 125
+            C107 116 117 123 114 135
+            C111 145 100 145 91 132Z
+          "
+        />
+
+        <path
+          class="ribbon-line"
+          d="
+            M91 124
+            C87 137 88 148 83 157
+          "
+        />
+
+        <path
+          class="ribbon-line"
+          d="
+            M91 124
+            C95 137 94 148 100 157
+          "
+        />
+
+        <circle
+          class="flower-center"
+          cx="91"
+          cy="126"
+          r="3.5"
+        />
+
+      </svg>
+
+    </div>
+
+
+    <!-- =========================
+         JUDUL
+         ========================= -->
+
+    <h1>
+      Hai sayang
+      <span class="title-heart">♥</span>
+    </h1>
+
+
+    <!-- =========================
+         WORDING
+         ========================= -->
+
+    <p class="description">
+      Sedikit ungkapan tentang perasaanku,
+      untuk kamu.
+    </p>
+
+
+    <!-- =========================
+         BUTTON
+         ========================= -->
+
+    <a
+      href="story.html"
+      class="open-button"
+    >
+      tekan ini kalau mau tau (⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)
+    </a>
+
+
+  </main>
+
+</body>
+
+</html>
