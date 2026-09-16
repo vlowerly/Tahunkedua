@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Kita, Sejauh Ini ♡</title>
 
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,6 +21,8 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -25,11 +30,14 @@
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
 
       overflow-x: hidden;
       overflow-y: auto;
+
+      font-family: "Quicksand", sans-serif;
+
+      color: #6e4b57;
 
       background:
         radial-gradient(
@@ -49,12 +57,6 @@
           #fdf5f8,
           #f5dce5
         );
-
-      color: #6e4b57;
-
-      font-family:
-        "Quicksand",
-        sans-serif;
     }
 
 
@@ -62,55 +64,50 @@
        FLOATING SPARKLES
     ========================= */
 
-    .heart {
+    .sparkle {
       position: fixed;
 
-      color: #c98b9e;
+      color: #b78391;
 
-      opacity: .38;
+      opacity: .35;
 
       pointer-events: none;
 
       z-index: 0;
 
-      font-size: 18px;
+      font-size: 20px;
 
       animation:
         floatSparkle linear infinite;
     }
 
-    .h1 {
+    .s1 {
       left: 8%;
       top: 15%;
-
       animation-duration: 8s;
     }
 
-    .h2 {
+    .s2 {
       left: 88%;
       top: 20%;
-
       animation-duration: 10s;
     }
 
-    .h3 {
+    .s3 {
       left: 15%;
       top: 75%;
-
       animation-duration: 9s;
     }
 
-    .h4 {
+    .s4 {
       left: 80%;
       top: 70%;
-
       animation-duration: 11s;
     }
 
-    .h5 {
+    .s5 {
       left: 50%;
       top: 8%;
-
       animation-duration: 12s;
     }
 
@@ -126,11 +123,11 @@
       }
 
       20% {
-        opacity: .38;
+        opacity: .35;
       }
 
       70% {
-        opacity: .38;
+        opacity: .35;
       }
 
       100% {
@@ -145,7 +142,7 @@
 
 
     /* =========================
-       MAIN
+       MAIN PAGE
     ========================= */
 
     .page {
@@ -161,14 +158,16 @@
       margin: auto;
 
       padding:
-        70px 25px
-        70px;
+        70px 20px
+        90px;
 
       display: flex;
 
       flex-direction: column;
 
       align-items: center;
+
+      text-align: center;
     }
 
 
@@ -200,15 +199,13 @@
         serif;
 
       font-size:
-        clamp(45px, 9vw, 62px);
+        clamp(45px, 10vw, 64px);
 
       font-weight: 600;
 
       color: #734d5b;
 
       line-height: .95;
-
-      text-align: center;
 
       animation:
         fadeDown 1.2s ease;
@@ -247,14 +244,14 @@
 
       max-width: 650px;
 
-      height: 390px;
+      height: 420px;
 
-      margin-top: 35px;
+      margin-top: 40px;
     }
 
 
     /* =========================
-       POLAROIDS
+       POLAROID
     ========================= */
 
     .polaroid {
@@ -270,7 +267,7 @@
         20px;
 
       background:
-        rgba(255,255,255,.88);
+        rgba(255,255,255,.90);
 
       box-shadow:
         0 15px 35px
@@ -281,6 +278,9 @@
       transition:
         transform .5s ease,
         box-shadow .5s ease;
+
+      animation:
+        polaroidIn .9s ease both;
     }
 
 
@@ -311,4 +311,578 @@
       background:
         linear-gradient(
           135deg,
-          #f
+          #fff4f7,
+          #f8e2e9
+        );
+
+      border:
+        1px solid
+        rgba(173,116,135,.15);
+
+      color: #b17a8a;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 34px;
+
+      font-weight: 500;
+    }
+
+
+    .polaroid-text {
+
+      margin-top: 13px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 19px;
+
+      color: #795363;
+
+      letter-spacing: .3px;
+    }
+
+
+    .p1 {
+
+      left: 2%;
+
+      top: 15px;
+
+      transform:
+        rotate(-7deg);
+
+      animation-delay: .2s;
+    }
+
+
+    .p2 {
+
+      right: 2%;
+
+      top: 30px;
+
+      transform:
+        rotate(7deg);
+
+      animation-delay: .4s;
+    }
+
+
+    .p3 {
+
+      left: 12%;
+
+      bottom: 5px;
+
+      transform:
+        rotate(5deg);
+
+      animation-delay: .6s;
+    }
+
+
+    .p4 {
+
+      right: 12%;
+
+      bottom: 0;
+
+      transform:
+        rotate(-5deg);
+
+      animation-delay: .8s;
+    }
+
+
+    /* =========================
+       CENTER MEMORY
+    ========================= */
+
+    .memory-circle {
+
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      transform:
+        translate(-50%, -50%);
+
+      width: 175px;
+      height: 175px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      background:
+        rgba(255,248,250,.94);
+
+      border:
+        1px solid
+        rgba(173,116,135,.20);
+
+      box-shadow:
+        0 15px 40px
+        rgba(123,76,94,.12);
+
+      z-index: 5;
+
+      animation:
+        circleIn 1.2s ease both;
+    }
+
+
+    .memory-label {
+
+      font-size: 9px;
+
+      letter-spacing: 3px;
+
+      color: #b27789;
+
+      margin-bottom: 7px;
+    }
+
+
+    .memory-date {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 24px;
+
+      font-weight: 600;
+
+      color: #734d5b;
+
+      line-height: 1.1;
+    }
+
+
+    .memory-small {
+
+      width: 125px;
+
+      margin-top: 8px;
+
+      font-size: 10px;
+
+      line-height: 1.5;
+
+      color: #a07885;
+    }
+
+
+    .memory-heart {
+
+      margin-top: 8px;
+
+      font-size: 13px;
+
+      color: #ad6d81;
+    }
+
+
+    /* =========================
+       STORY TEXT
+    ========================= */
+
+    .story {
+
+      max-width: 620px;
+
+      margin-top: 20px;
+
+      padding:
+        35px 30px
+        38px;
+
+      background:
+        rgba(255,255,255,.55);
+
+      border:
+        1px solid
+        rgba(173,116,135,.13);
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 15px 40px
+        rgba(123,76,94,.07);
+
+      text-align: left;
+
+      animation:
+        fadeUp 1.4s ease;
+    }
+
+
+    .story p {
+
+      margin-bottom: 19px;
+
+      font-size: 14px;
+
+      line-height: 1.95;
+
+      color: #795d68;
+    }
+
+
+    .story p:last-child {
+
+      margin-bottom: 0;
+    }
+
+
+    .story strong {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 21px;
+
+      font-weight: 600;
+
+      color: #734d5b;
+    }
+
+
+    .story .closing {
+
+      text-align: center;
+
+      margin-top: 25px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 22px;
+
+      color: #734d5b;
+    }
+
+
+    /* =========================
+       SCROLL CUE
+    ========================= */
+
+    .scroll-cue {
+
+      margin-top: 5px;
+
+      font-size: 25px;
+
+      color: #ad7487;
+
+      opacity: .65;
+
+      animation:
+        bounce 1.8s ease-in-out infinite;
+    }
+
+
+    @keyframes bounce {
+
+      0%, 100% {
+        transform:
+          translateY(0);
+      }
+
+      50% {
+        transform:
+          translateY(7px);
+      }
+
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================= */
+
+    .buttons {
+
+      display: flex;
+
+      gap: 12px;
+
+      margin-top: 35px;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+    }
+
+
+    .button {
+
+      display: inline-block;
+
+      padding:
+        12px 23px;
+
+      border-radius: 50px;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 500;
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+
+    .button-next {
+
+      background: #a66d7e;
+
+      color: white;
+
+      box-shadow:
+        0 10px 25px
+        rgba(100,60,70,.15);
+    }
+
+
+    .button-back {
+
+      background:
+        rgba(255,255,255,.65);
+
+      color: #815966;
+
+      border:
+        1px solid
+        rgba(173,116,135,.25);
+    }
+
+
+    .button:hover {
+
+      transform:
+        translateY(-3px);
+    }
+
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    @keyframes fadeDown {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(-15px);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+
+    }
+
+
+    @keyframes fadeUp {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(18px);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+
+    }
+
+
+    @keyframes polaroidIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(25px)
+          rotate(0deg);
+      }
+
+      to {
+
+        opacity: 1;
+      }
+
+    }
+
+
+    @keyframes circleIn {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(.85);
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1);
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .page {
+
+        padding:
+          55px 15px
+          70px;
+      }
+
+
+      .eyebrow {
+
+        font-size: 10px;
+
+        letter-spacing: 3px;
+      }
+
+
+      h1 {
+
+        font-size: 50px;
+      }
+
+
+      .intro {
+
+        max-width: 330px;
+
+        font-size: 13px;
+      }
+
+
+      .memory-area {
+
+        height: 430px;
+
+        margin-top: 30px;
+      }
+
+
+      .polaroid {
+
+        width: 135px;
+
+        min-height: 175px;
+
+        padding:
+          10px 10px
+          15px;
+      }
+
+
+      .polaroid-inner {
+
+        height: 115px;
+
+        font-size: 28px;
+      }
+
+
+      .polaroid-text {
+
+        margin-top: 9px;
+
+        font-size: 16px;
+      }
+
+
+      .p1 {
+        left: 1%;
+        top: 5px;
+      }
+
+
+      .p2 {
+        right: 1%;
+        top: 20px;
+      }
+
+
+      .p3 {
+        left: 4%;
+        bottom: 5px;
+      }
+
+
+      .p4 {
+        right: 4%;
+        bottom: 0;
+      }
+
+
+      .memory-circle {
+
+        width: 145px;
+
+        height: 145px;
+      }
+
+
+      .memory-date {
+
+        font-size: 21px;
+      }
+
+
+      .memory-small {
+
+       
